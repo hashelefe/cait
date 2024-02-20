@@ -15,7 +15,7 @@ const Sidebar = () => {
   return (
     <aside className='sidebar'>
        <div className="flex size-full flex-col gap-4">
-        <Link href="/" className='sidebar-logo'>
+        <Link href="/" className='flex-center sidebar-logo'>
             <Image src="/assets/images/logo-color.svg" alt="logo" width={125} height={25}/>
         </Link>
 
@@ -67,7 +67,7 @@ const Sidebar = () => {
                                 </li> 
                             )
                             })}
-                            <li className='flex-center cursor-pointer gap-2 p-4'>
+                            <li className='cursor-pointer p-3'>
                                 <UserButton afterSignOutUrl='/' showName/>
                             </li>
                         </ul>

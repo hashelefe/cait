@@ -24,6 +24,7 @@ const MobileNav = () => {
         <nav className="flex gap-2">
             <SignedIn>
                 <UserButton afterSignOutUrl="/"/>
+                <div className="pl-2"/>
                 <Sheet>
                     <SheetTrigger>
                         <Image 
