@@ -12,27 +12,30 @@ export async function checkoutCredits(transaction: CheckoutTransactionParams){
 
     const amount = Number(transaction.amount) * 100
     const session = await stripe.checkout.sessions.create({
-        line_items: [{
+        line_items: [
+          {
             price_data: {
-                currency: "usd",
-                unit_amount: amount,
-                product_data: {
-                    name: transaction.plan,
-                },
-            }
-        }],
+              currency: 'usd',
+              unit_amount: amount,
+              product_data: {
+                name: transaction.plan,
+              }
+            },
+            quantity: 1
+          }
+        ],
         metadata: {
-            plan: transaction.plan,
-            credits: transaction.credits,
-            buyerId: transaction.buyerId,
+          plan: transaction.plan,
+          credits: transaction.credits,
+          buyerId: transaction.buyerId,
         },
-        mode: "payment",
+        mode: 'payment',
         success_url: `${process.env.NEXT_PUBLIC_BASE_URL}/profile`,
         cancel_url: `${process.env.NEXT_PUBLIC_BASE_URL}/`,
-    })
-
-    redirect(session.url as string)
-}
+      })
+    
+      redirect(session.url!)
+    }
 
 export async function createTransaction(transaction: CreateTransactionParams) {
     try {
