@@ -27,7 +27,7 @@ const Sidebar = () => {
                         return (
                             <li key={link.route} className={classNames(`sidebar-nav_element group transition ease-in-out`, 
                             {
-                                'bg-[#00C9FF] text-white hover:bg-sky-500': isActive,
+                                'bg-gradient-to-r from-[#24D6FF] to-[#0095FF] text-white hover:bg-sky-500': isActive,
                                 'text-gray-700': !isActive,
                             })}>
                               <Link className="sidebar-link" href={link.route}>

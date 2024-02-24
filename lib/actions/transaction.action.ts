@@ -1,55 +1,56 @@
-"use server"
+"use server";
 
-import { redirect } from "next/navigation"
-import Stripe from "stripe"
-import { connectToDatabase } from "../database/mongoose"
-import { handleError } from "../utils"
-import Transaction from "../database/models/transaction.model"
-import { updateCredits } from "./user.actions"
+import { redirect } from 'next/navigation'
+import Stripe from "stripe";
+import { handleError } from '../utils';
+import { connectToDatabase } from '../database/mongoose';
+import Transaction from '../database/models/transaction.model';
+import { updateCredits } from './user.actions';
 
-export async function checkoutCredits(transaction: CheckoutTransactionParams){
-    const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!)
+export async function checkoutCredits(transaction: CheckoutTransactionParams) {
+  const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!);
 
-    const amount = Number(transaction.amount) * 100
-    const session = await stripe.checkout.sessions.create({
-        line_items: [
-          {
-            price_data: {
-              currency: 'usd',
-              unit_amount: amount,
-              product_data: {
-                name: transaction.plan,
-              }
-            },
-            quantity: 1
+  const amount = Number(transaction.amount) * 100;
+
+  const session = await stripe.checkout.sessions.create({
+    line_items: [
+      {
+        price_data: {
+          currency: 'usd',
+          unit_amount: amount,
+          product_data: {
+            name: transaction.plan,
           }
-        ],
-        metadata: {
-          plan: transaction.plan,
-          credits: transaction.credits,
-          buyerId: transaction.buyerId,
         },
-        mode: 'payment',
-        success_url: `${process.env.NEXT_PUBLIC_BASE_URL}/profile`,
-        cancel_url: `${process.env.NEXT_PUBLIC_BASE_URL}/`,
-      })
-    
-      redirect(session.url!)
-    }
+        quantity: 1
+      }
+    ],
+    metadata: {
+      plan: transaction.plan,
+      credits: transaction.credits,
+      buyerId: transaction.buyerId,
+    },
+    mode: 'payment',
+    success_url: `${process.env.NEXT_PUBLIC_BASE_URL}/profile`,
+    cancel_url: `${process.env.NEXT_PUBLIC_BASE_URL}/`,
+  })
+
+  redirect(session.url!)
+}
 
 export async function createTransaction(transaction: CreateTransactionParams) {
-    try {
-        await connectToDatabase();
-        const newTransaction = await Transaction.create({
-            ...transaction, buyer: transaction.buyerId
-        })
+  try {
+    await connectToDatabase();
 
-        await updateCredits(transaction.buyerId, transaction.credits)
+    // Create a new transaction with a buyerId
+    const newTransaction = await Transaction.create({
+      ...transaction, buyer: transaction.buyerId
+    })
 
-        return JSON.parse(JSON.stringify(newTransaction))
+    await updateCredits(transaction.buyerId, transaction.credits);
 
-    } catch (error) {
-        handleError(error)
-    }
-    
+    return JSON.parse(JSON.stringify(newTransaction));
+  } catch (error) {
+    handleError(error)
+  }
 }

@@ -25,27 +25,27 @@ const Profile = async ({ searchParams }: SearchParamProps) => {
           <p className="p-14-medium md:p-16-medium">CREDITS AVAILABLE</p>
           <div className="mt-4 flex items-center gap-4">
             <Image
-              src="/assets/icons/stack.svg"
+              src="/assets/icons/savings.svg"
               alt="coins"
               width={50}
               height={50}
               className="size-9 md:size-12"
             />
-            <h2 className="h2-bold text-dark-600">{user.creditBalance}</h2>
+            <h2 className="h2-bold text-white">{user.creditBalance}</h2>
           </div>
         </div>
 
-        <div className="profile-image-manipulation">
+        <div className="profile-image-manipulation ">
           <p className="p-14-medium md:p-16-medium">IMAGE MANIPULATION DONE</p>
           <div className="mt-4 flex items-center gap-4">
             <Image
-              src="/assets/icons/camera.svg"
+              src="/assets/icons/image-white.svg"
               alt="coins"
               width={50}
               height={50}
               className="size-9 md:size-12"
             />
-            <h2 className="h2-bold text-dark-600">{images?.data.length}</h2>
+            <h2 className="h2-bold text-white">{images?.data.length}</h2>
           </div>
         </div>
       </section>

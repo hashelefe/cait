@@ -246,11 +246,11 @@
   }
 
   .profile-balance {
-    @apply w-full rounded-[16px] border-2 border-purple-200/20 bg-white p-5 shadow-lg shadow-purple-200/10 md:px-6 md:py-8;
+    @apply w-full rounded-[16px]  text-white bg-gradient-to-r from-[#0095FF] to-[#24D6FF] p-5 shadow-lg shadow-purple-200/10 md:px-6 md:py-8;
   }
 
   .profile-image-manipulation {
-    @apply w-full rounded-[16px] border-2 border-purple-200/20 bg-white p-5 shadow-lg shadow-purple-200/10 md:px-6 md:py-8;
+    @apply w-full rounded-[16px] bg-gradient-to-r from-[#0095FF] to-[#24D6FF] text-white p-5 shadow-lg shadow-purple-200/10 md:px-6 md:py-8;
   }
 
   /* Transformation Details */
@@ -360,7 +360,14 @@
   .transformed-placeholder {
     @apply flex-center p-14-medium h-full min-h-72 flex-col gap-5 rounded-[16px] border border-dashed bg-purple-100/20 shadow-inner;
   }
+
+  /* Contact Page */
+  .contact-header{
+    @apply flex-center p-14-medium w-full rounded-[16px] text-dark-600 min-h-72 border border-dashed border-sky-500;
+  }
 }
+
+
 
 /* =====  CLERK OVERRIDES */
 .cl-userButtonBox {
