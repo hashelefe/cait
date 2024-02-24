@@ -1,34 +1,34 @@
 export const navLinks = [
-    {
-      label: "Home",
-      route: "/",
-      icon: "/assets/icons/home.svg",
-    },
-    {
-      label: "Image Restore",
-      route: "/transform/add/restore",
-      icon: "/assets/icons/image.svg",
-    },
-    {
-      label: "Generative Fill",
-      route: "/transform/add/fill",
-      icon: "/assets/icons/stars.svg",
-    },
-    {
-      label: "Object Remove",
-      route: "/transform/add/remove",
-      icon: "/assets/icons/scan.svg",
-    },
-    {
-      label: "Object Recolor",
-      route: "/transform/add/recolor",
-      icon: "/assets/icons/filter.svg",
-    },
-    {
-      label: "Background Remove",
-      route: "/transform/add/removeBackground",
-      icon: "/assets/icons/camera.svg",
-    },
+  {
+    label: "Home",
+    route: "/",
+    icon: "/assets/icons/home.svg",
+  },
+  {
+    label: "Generative Fill",
+    route: "/transform/add/fill",
+    icon: "/assets/icons/stars.svg",
+  },
+  {
+    label: "Object Remove",
+    route: "/transform/add/remove",
+    icon: "/assets/icons/scan.svg",
+  },
+  {
+    label: "Background Remove",
+    route: "/transform/add/removeBackground",
+    icon: "/assets/icons/camera.svg",
+  },
+  {
+    label: "Object Recolor",
+    route: "/transform/add/recolor",
+    icon: "/assets/icons/filter.svg",
+  },
+  {
+    label: "Image Restore",
+    route: "/transform/add/restore",
+    icon: "/assets/icons/image.svg",
+  },
     {
       label: "Profile",
       route: "/profile",
@@ -123,28 +123,28 @@ export const navLinks = [
     restore: {
       type: "restore",
       title: "Restore Image",
-      subTitle: "Refine images by removing noise and imperfections",
+      subTitle: "Effortlessly enhance old, damaged, or low-resolution images to pristine quality. Our advanced algorithms meticulously repair imperfections, preserving the authenticity of your valuable memories with unmatched precision and clarity",
       config: { restore: true },
       icon: "image.svg",
     },
     removeBackground: {
       type: "removeBackground",
       title: "Background Remove",
-      subTitle: "Removes the background of the image using AI",
+      subTitle: "Seamlessly eliminate backgrounds from images with precision and efficiency, leaving you with clean, transparent compositions. Say goodbye to tedious manual editing and hello to effortless, polished results, perfect for product photography, graphic design, and more",
       config: { removeBackground: true },
       icon: "camera.svg",
     },
     fill: {
       type: "fill",
       title: "Generative Fill",
-      subTitle: "Enhance an image's dimensions using AI outpainting",
+      subTitle: "Effortlessly fill in missing areas of your images with realistic details, seamlessly blending with existing content for a flawless finish. Enhance productivity and unleash your imagination with our intuitive tool, perfect for retouching, composition, and design projects",
       config: { fillBackground: true },
       icon: "stars.svg",
     },
     remove: {
       type: "remove",
       title: "Object Remove",
-      subTitle: "Identify and eliminate objects from images",
+      subTitle: "Eliminate unwanted elements from your photos with precision and ease, ensuring seamless integration with the background. Streamline your retouching process and achieve impeccable results, whether you're enhancing landscapes, portraits, or architectural compositions",
       config: {
         remove: { prompt: "", removeShadow: true, multiple: true },
       },
@@ -153,7 +153,7 @@ export const navLinks = [
     recolor: {
       type: "recolor",
       title: "Object Recolor",
-      subTitle: "Identify and recolor objects from the image",
+      subTitle: "Transform the color of objects in your photos with precision and simplicity, achieving vibrant results while maintaining natural tones. Whether you're adjusting product colors, enhancing visual impact, or exploring creative possibilities, our intuitive tool empowers you to bring your vision to life",
       config: {
         recolor: { prompt: "", to: "", multiple: true },
       },

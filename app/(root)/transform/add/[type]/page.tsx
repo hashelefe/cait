@@ -19,7 +19,7 @@ const AddTransformsPage = async ({params: {type}}: SearchParamProps) => {
           title={transformation.title}
           subtitle = {transformation.subTitle}/>
 
-        <section className="mt-10">
+        <section className="mt-12">
           <TransformationForm 
             action="Add" 
             userId={user._id} 
