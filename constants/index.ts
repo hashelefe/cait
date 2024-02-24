@@ -89,7 +89,7 @@ export const navLinks = [
       name: "Premium Package",
       icon: "/assets/icons/premium-plan.svg",
       price: 99,
-      credits: 1000,
+      credits: 600,
       inclusions: [
         {
           label: "1000 Credits",
