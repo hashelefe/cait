@@ -44,13 +44,13 @@ export const navLinks = [
   export const plans = [
     {
       _id: 1,
-      name: "Free",
+      name: "Budget",
       icon: "/assets/icons/free-plan.svg",
       price: 0,
-      credits: 20,
+      credits: 15,
       inclusions: [
         {
-          label: "20 Free Credits",
+          label: "15 Free Credits",
           isIncluded: true,
         },
         {
@@ -61,58 +61,46 @@ export const navLinks = [
           label: "Priority Customer Support",
           isIncluded: false,
         },
-        {
-          label: "Priority Updates",
-          isIncluded: false,
-        },
       ],
     },
     {
       _id: 2,
-      name: "Pro Package",
-      icon: "/assets/icons/free-plan.svg",
-      price: 40,
-      credits: 120,
+      name: "Standard Package",
+      icon: "/assets/icons/pro-plan.svg",
+      price: 15,
+      credits: 60,
       inclusions: [
         {
-          label: "120 Credits",
+          label: "60 Credits",
           isIncluded: true,
         },
         {
-          label: "Full Access to Services",
+          label: "Full Access to All Services",
           isIncluded: true,
         },
         {
           label: "Priority Customer Support",
           isIncluded: true,
-        },
-        {
-          label: "Priority Updates",
-          isIncluded: false,
         },
       ],
     },
     {
       _id: 3,
       name: "Premium Package",
-      icon: "/assets/icons/free-plan.svg",
-      price: 199,
-      credits: 2000,
+      icon: "/assets/icons/premium-plan.svg",
+      price: 99,
+      credits: 1000,
       inclusions: [
         {
-          label: "2000 Credits",
+          label: "1000 Credits",
           isIncluded: true,
         },
         {
-          label: "Full Access to Services",
+          label: "Full Access to All Services",
           isIncluded: true,
         },
         {
           label: "Priority Customer Support",
-          isIncluded: true,
-        },
-        {
-          label: "Priority Updates",
           isIncluded: true,
         },
       ],

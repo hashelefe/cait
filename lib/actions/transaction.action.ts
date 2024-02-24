@@ -18,7 +18,7 @@ export async function checkoutCredits(transaction: CheckoutTransactionParams){
                 unit_amount: amount,
                 product_data: {
                     name: transaction.plan,
-                }
+                },
             }
         }],
         metadata: {
