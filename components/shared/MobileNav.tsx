@@ -7,23 +7,19 @@ import {
   } from "@/components/ui/sheet"
 import { navLinks } from '@/constants'
 import { usePathname } from "next/navigation"
-import { SignedIn, UserButton } from "@clerk/nextjs"
+import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs"
 import classNames from "classnames"
 import Image from "next/image"
 import Link from "next/link"
+import { Button } from "../ui/button";
   
 
 const MobileNav = () => {
   const pathname = usePathname();
   return (
     <header className="header">
-        <Link href="/" className="flex items-center gap-2 md:py-2">
-            <Image src="/assets/images/logo-color.svg" alt="logo" width={125} height={25}/>
-        </Link>
-
         <nav className="flex gap-2">
             <SignedIn>
-                <UserButton afterSignOutUrl="/"/>
                 <div className="pl-2"/>
                 <Sheet>
                     <SheetTrigger>
@@ -35,7 +31,7 @@ const MobileNav = () => {
                             className="cursor-pointer"
                         />
                     </SheetTrigger>
-                    <SheetContent className="sheet-content sm:w-64">
+                    <SheetContent className="sheet-content text-center sm:w-64">
                         <>
                             <Image
                                 src="/assets/images/logo-color.svg"
@@ -73,7 +69,20 @@ const MobileNav = () => {
                     </SheetContent>
                 </Sheet>
             </SignedIn>
+            
         </nav>
+
+        <Link href="/" className="flex items-center gap-2 md:py-2">
+            <Image src="/assets/images/logo-color.svg" alt="logo" width={125} height={25}/>
+        </Link>
+        <SignedIn>
+            <UserButton afterSignOutUrl="/"/>
+        </SignedIn>
+        <SignedOut>
+            <Button asChild className='button bg-[#00C9FF] text-white hover:bg-sky-500'>
+                <Link href="/sign-in">Login</Link>
+            </Button>
+        </SignedOut>
     </header>
   )
 }
