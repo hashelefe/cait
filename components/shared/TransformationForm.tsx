@@ -34,6 +34,7 @@ import { getCldImageUrl } from "next-cloudinary"
 import { addImage, updateImage } from "@/lib/actions/image.actions"
 import { useRouter } from "next/navigation"
 import { InsufficientCreditsModal } from "./InsufficientCreditsModal"
+import { Checkbox } from "../ui/checkbox"
  
 export const formSchema = z.object({
   title: z.string(),
@@ -41,6 +42,7 @@ export const formSchema = z.object({
   color: z.string().optional(),
   prompt: z.string().optional(),
   publicId: z.string(),
+  public: z.boolean(),
 })
 
 const TransformationForm = ({ action, data = null, userId, type, creditBalance, config = null }: TransformationFormProps) => {
@@ -51,6 +53,7 @@ const TransformationForm = ({ action, data = null, userId, type, creditBalance, 
   const [isTransforming, setIsTransforming] = useState(false);
   const [transformationConfig, setTransformationConfig] = useState(config)
   const [isPending, startTransition] = useTransition()
+  const [isPublic, setIsPublic] = useState(false)
   const router = useRouter()
 
   const initialValues = data && action === 'Update' ? {
@@ -59,6 +62,7 @@ const TransformationForm = ({ action, data = null, userId, type, creditBalance, 
     color: data?.color,
     prompt: data?.prompt,
     publicId: data?.publicId,
+    public: data?.public,
   } : defaultValues
 
    // 1. Define your form.
@@ -91,10 +95,12 @@ const TransformationForm = ({ action, data = null, userId, type, creditBalance, 
         aspectRatio: values.aspectRatio,
         prompt: values.prompt,
         color: values.color,
+        public: values.public,
       }
 
       if(action === 'Add') {
         try {
+          console.log(imageData)
           const newImage = await addImage({
             image: imageData,
             userId,
@@ -266,7 +272,43 @@ const TransformationForm = ({ action, data = null, userId, type, creditBalance, 
             )}
           </div>
         )}
-
+        <CustomField 
+          control={form.control}
+          name="public"
+          className="w-full"
+          render={({ field }) => (
+            <>
+              <div className="flex items-center">
+                <input
+                  type="radio"
+                  id="public"
+                  {...field}
+                  value={true}
+                  checked={field.value === true} // For controlled radio button
+                  onChange={(e) => field.onChange(true)}
+                />
+                <label
+                  htmlFor="public"
+                  className="text-gray-600 ml-3 md-2"
+                >Public</label>
+              </div>
+              <div className="flex items-center">
+                <input
+                  type="radio"
+                  id="private"
+                  {...field}
+                  value={false}
+                  checked={field.value === false} // For controlled radio button
+                  onChange={(e) => field.onChange(false)}
+                />
+                <label
+                  htmlFor="private"
+                  className="text-gray-600 ml-3 md-2"
+                >Private</label>
+              </div>
+            </>
+          )}
+        />
         <div className="media-uploader-field">
           <CustomField 
             control={form.control}

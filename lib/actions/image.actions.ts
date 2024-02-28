@@ -21,6 +21,7 @@ export async function addImage({image, userId, path}: AddImageParams) {
     try{
         await connectToDatabase();
 
+        console.log(image)
         const author = await User.findById(userId);
         
         if(!author){
@@ -32,7 +33,7 @@ export async function addImage({image, userId, path}: AddImageParams) {
             author: author._id,
         })
         revalidatePath(path);
-
+        console.log(newImage)
         return JSON.parse(JSON.stringify(newImage));
 
     } catch(error) {
@@ -113,6 +114,8 @@ export async function getAllImages({limit = 9,page = 1, searchQuery = ''}:{
         if(searchQuery) {
             expression += ` AND ${searchQuery}`
         }
+
+
         const {resources} = await cloudinary.search
         .expression(expression)
         .execute();
@@ -120,12 +123,16 @@ export async function getAllImages({limit = 9,page = 1, searchQuery = ''}:{
         const resourceIds = resources.map((resource:any) => resource.public_id);
 
         let query = {}
-
+        query = {
+            public: true
+        }
+        
         if(searchQuery) {
             query = {
                 publicId: {
                     $in: resourceIds
-                }
+                },
+                public: true
             }
         }
 

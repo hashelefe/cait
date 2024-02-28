@@ -31,6 +31,7 @@ declare type CreateUserParams = {
       aspectRatio: string | undefined;
       prompt: string | undefined;
       color: string | undefined;
+      public: boolean;
     };
     userId: string;
     path: string;
