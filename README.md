@@ -34,7 +34,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## Deployed on Vercel
 
-To see a fully deployed version of this app visit [https://cait.vercel.app](htttps://cait.vercel.app) and see what you can do there yourself!
+To see a fully deployed version of this app visit https://cait.vercel.app and see what you can do there yourself!
 
 ## <a name="features">Features</a>
 
@@ -70,40 +70,43 @@ To see a fully deployed version of this app visit [https://cait.vercel.app](httt
 
 
 
-**Install the project dependencies using npm:
+##Install the project dependencies using npm:
 
 ```bash
 npm run dev
 ```
 
-**Set Up Environment Variables**
+##Set Up Environment Variables
 
-Create a new file named `.env.local` in the root of your project and add the following content:
+Create a new file named `.env.local` in the root of your with following content:
 
 ```env
-#NEXT
-NEXT_PUBLIC_SERVER_URL=
+#Clerk 
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY
+CLERK_SECRET_KEY
 
-#MONGODB
-MONGODB_URL=
-
-#CLERK
-NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=
-CLERK_SECRET_KEY=
-WEBHOOK_SECRET=
-
+#Clerk URLs
 NEXT_PUBLIC_CLERK_SIGN_IN_URL=/sign-in
 NEXT_PUBLIC_CLERK_SIGN_UP_URL=/sign-up
-NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL=/
+NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL=/
 NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL=/
 
-#CLOUDINARY
-NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME=
-CLOUDINARY_API_KEY=
-CLOUDINARY_API_SECRET=
+#Clerk Webhook Secret
+CLERK_WEBHOOK_SECRET
 
-#STRIPE
-STRIPE_SECRET_KEY=
-STRIPE_WEBHOOK_SECRET=
-NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=
+#MongoDB
+MONGODB_URL
+
+#Cloudinary
+NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME
+CLOUDINARY_API_KEY
+CLOUDINARY_API_SECRET
+
+#Stripe
+NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY
+STRIPE_SECRET_KEY
+STRIPE_WEBHOOK_SECRET
+
+#Other
+NEXT_PUBLIC_BASE_URL=http://localhost:3000
 ```
