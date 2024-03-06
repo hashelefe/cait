@@ -39,20 +39,35 @@ To see a fully deployed version of this app visit https://cait.vercel.app and se
 ## <a name="features">Features</a>
 
 **Secure Login:** Register, log in, and access features with confidence.
+
 **Precision Object Removal:** Clean up images by removing unwanted objects with pinpoint accuracy.
+
 **Effortless Image Restoration** Breathe new life into old or damaged photos with ease.
+
 **Powerful Image Search:** Find images based on content or objects, quickly and precisely.
+
 **User-Friendly Image Gallery:** Explore user-created transformations through intuitive, paginated navigation.
+
 **Seamless Image Completion:** Fill in missing parts of images flawlessly.
+
 **Creative Image Recoloring:** Change object colors easily to customize any image.
+
 **Easy Downloading:** Save and share your AI-powered creations effortlessly.
+
 **Background Extraction:** Isolate objects from their backgrounds with no fuss.
+
 **Transformation History:** View detailed information about each transformation performed.
+
 **Secure Credit Purchases:** Buy credits for uninterrupted use with safe and secure Stripe integration.
+
 **Flexible Credit System:** Earn or purchase credits to unlock image transformations.
+
 **Responsive Design:** Enjoy a smooth experience across all devices with an intuitive interface.
+
 **Transformation Control:** Manage your creations by deleting or editing them as needed.
+
 **Personalized Profile:** Access your transformed images and credit information conveniently
+
 
 
 ## Install the project dependencies using npm:
