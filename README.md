@@ -1,5 +1,21 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<div>
+    <img src="https://img.shields.io/badge/-Next_JS-black?style=for-the-badge&logoColor=white&logo=nextdotjs&color=000000" alt="nextdotjs" />
+    <img src="https://img.shields.io/badge/-TypeScript-black?style=for-the-badge&logoColor=white&logo=typescript&color=3178C6" alt="typescript" />
+    <img src="https://img.shields.io/badge/-Stripe-black?style=for-the-badge&logoColor=white&logo=stripe&color=008CDD" alt="stripe" />
+    <img src="https://img.shields.io/badge/-MongoDB-black?style=for-the-badge&logoColor=white&logo=mongodb&color=47A248" alt="mongodb" />
+    <img src="https://img.shields.io/badge/-Tailwind_CSS-black?style=for-the-badge&logoColor=white&logo=tailwindcss&color=06B6D4" alt="tailwindcss" />
+</div>
 
+## <a name="tech-stack">⚙️ Tech Stack</a>
+
+- Next.js
+- TypeScript
+- MongoDB
+- Clerk
+- Cloudinary
+- Stripe
+- Shadcn
+- TailwindCSS
 ## Getting Started
 
 First, run the development server:
@@ -16,21 +32,78 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Deployed on Vercel
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+To see a fully deployed version of this app visit [https://cait.vercel.app](htttps://cait.vercel.app) and see what you can do there yourself!
 
-## Learn More
+## <a name="features">Features</a>
 
-To learn more about Next.js, take a look at the following resources:
+**Authentication and Authorization**: Secure user access with registration, login, and route protection.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+**Object Removal**: Clean up images by removing unwanted objects with precision
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+**Image Restoration**: Revive old or damaged images effortlessly
 
-## Deploy on Vercel
+**Advanced Image Search**: Find images by content or objects present inside the image quickly and accurately
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+**Community Image Showcase**: Explore user transformations with easy navigation using pagination
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+**Image Generative Fill**: Fill in missing areas of images seamlessly
+
+**Image Recoloring**: Customize images by replacing objects with desired colors easily
+
+**Download Transformed Images**: Save and share AI-transformed images conveniently
+
+**Background Removal**: Extract objects from backgrounds with ease
+
+**Transformed Image Details**: View details of transformations for each image
+
+**Credits Purchase**: Securely buy credits via Stripe for uninterrupted use
+
+**Credits System**: Earn or purchase credits for image transformations
+
+**Responsive UI/UX**: A seamless experience across devices with a user-friendly interface
+
+**Transformation Management**: Control over deletion and updates of transformations
+
+**Profile Page**: Access transformed images and credit information personally
+
+
+
+**Install the project dependencies using npm:
+
+```bash
+npm run dev
+```
+
+**Set Up Environment Variables**
+
+Create a new file named `.env.local` in the root of your project and add the following content:
+
+```env
+#NEXT
+NEXT_PUBLIC_SERVER_URL=
+
+#MONGODB
+MONGODB_URL=
+
+#CLERK
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=
+CLERK_SECRET_KEY=
+WEBHOOK_SECRET=
+
+NEXT_PUBLIC_CLERK_SIGN_IN_URL=/sign-in
+NEXT_PUBLIC_CLERK_SIGN_UP_URL=/sign-up
+NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL=/
+NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL=/
+
+#CLOUDINARY
+NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME=
+CLOUDINARY_API_KEY=
+CLOUDINARY_API_SECRET=
+
+#STRIPE
+STRIPE_SECRET_KEY=
+STRIPE_WEBHOOK_SECRET=
+NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=
+```
