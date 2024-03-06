@@ -70,13 +70,13 @@ To see a fully deployed version of this app visit https://cait.vercel.app and se
 
 
 
-##Install the project dependencies using npm:
+## Install the project dependencies using npm:
 
 ```bash
 npm run dev
 ```
 
-##Set Up Environment Variables
+## Set Up Environment Variables
 
 Create a new file named `.env.local` in the root of your with following content:
 
